@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@paddlejs/paddlejs-backend-webgl": "1.1.15",
+    "@paddlejs/paddlejs-core": "2.1.14"
+  }
+}
