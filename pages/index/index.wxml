@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view>
+  <canvas canvas-id="det" id="det" style="width:{{detWidth}}px; height:{{detHeight}}px;"></canvas>
+  <canvas canvas-id="rec" id="rec" style="width:{{recWidth}}px; height:{{recHeight}}px;"></canvas>
+</view>
