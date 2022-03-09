@@ -56,14 +56,16 @@ Page({
     const detModelPath = 'https://paddlejs.bj.bcebos.com/models/fuse/ocr/ch_PP-OCRv2_det_fuse_activation/model.json';
     const recModelPath = 'https://paddlejs.bj.bcebos.com/models/fuse/ocr/ch_PP-OCRv2_rec_fuse_activation/model.json';
     paddlejs_core.env.set('webgl_pack_output', true);
-    paddlejs_core.env.set('webgl_feed_process', true);
+    //paddlejs_core.env.set('webgl_feed_process', true);
+    //需要使用最新的paddlejs-core
+    
     detectRunner = new paddlejs_core.Runner({
       modelPath: detCustomModel ? detCustomModel : detModelPath,
       fill: '#fff',
       mean: [0.485, 0.456, 0.406],
       std: [0.229, 0.224, 0.225],
       bgr: true,
-      //webglFeedProcess: true
+      webglFeedProcess: true
     });
     const detectInit = detectRunner.init();
 
@@ -75,7 +77,8 @@ Page({
       bgr: true,
       plugins: {
         preTransforms: [new OptModel()]
-      }
+      },
+      webglFeedProcess: true
     });
     const recInit = recRunner.init();
 
